@@ -1,6 +1,6 @@
 import 'dart:developer';
 
-class CustomLog {
+class NetworkLog {
 
   static bool isPrint = true;
 
