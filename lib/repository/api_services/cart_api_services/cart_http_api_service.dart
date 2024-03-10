@@ -1,4 +1,3 @@
-import 'package:http/http.dart';
 import 'package:mvvm_flutter/data/network/base_http_methods.dart';
 import 'package:mvvm_flutter/data/network/network_http_methods.dart';
 import 'package:mvvm_flutter/model/cart/cart_list_model.dart';
@@ -10,8 +9,9 @@ class CartHttpApiService extends CartRepository{
   /// And NetworkHttpMethods is Api methods infrastructure
   final BaseHttpMethods _apiMethods = NetworkHttpMethods();
 
+  /// This is cart API service method
   @override
-  Future<CartListModel?> getCartList() async {
+  Future<CartListModel?> cartList() async {
     Map<String,dynamic>? response = await _apiMethods.get("url");
     if(response != null){
       CartListModel cartListModel = CartListModel.fromJson(response);
