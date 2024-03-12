@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:mvvm_flutter/configs/dependency_injection/dependency_injection.dart' as di;
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  ///This is dependency injection initialize method
+  di.init();
   runApp(const MyApp());
 }
 
