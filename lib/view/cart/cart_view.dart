@@ -20,7 +20,7 @@ class _CartViewState extends State<CartView> {
     //CartViewModel cartViewModel = Provider.of<CartViewModel>(context);
 
     return Scaffold(
-      body: Container(
+      body: SizedBox(
         width: double.infinity,
         height: double.infinity,
         child: ChangeNotifierProvider(
