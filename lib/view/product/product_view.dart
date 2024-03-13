@@ -43,6 +43,7 @@ class _ProductViewState extends State<ProductView> {
                         return const Center(child: Text('No data found'));
                       } else {
                         return ListView.builder(
+                          itemCount: value.productList.data?.products?.length,
                             itemBuilder: (context, index) {
                               return Container();
                             });
