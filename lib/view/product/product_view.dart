@@ -32,7 +32,7 @@ class _ProductViewState extends State<ProductView> {
         child: ChangeNotifierProvider<ProductViewModel>(
           create: (BuildContext context) => ProductViewModel(productRepository: getIt())..getProductList(),
           child: Consumer<ProductViewModel>(
-            builder: (context, value, widget) {
+            builder: (BuildContext context, value, Widget? child) {
               switch (value.productList.status) {
                 case Status.loading:
                   return const Center(child: LoadingWidget());
