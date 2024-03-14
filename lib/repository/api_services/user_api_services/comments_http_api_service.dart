@@ -1,3 +1,4 @@
+import 'package:mvvm_flutter/configs/api_url/api_urls.dart';
 import 'package:mvvm_flutter/data/network/base_http_methods.dart';
 import 'package:mvvm_flutter/data/network/network_http_methods.dart';
 import 'package:mvvm_flutter/model/user/comment_list_model.dart';
@@ -12,7 +13,7 @@ class CommentHttpApiService implements CommentRepository{
   /// This is comment API service method
   @override
   Future<CommentListModel?> commentList() async {
-    Map<String,dynamic>? response = await _apiMethods.get("url");
+    Map<String,dynamic>? response = await _apiMethods.get(ApiUrls.comment);
     if(response != null){
       CommentListModel commentListModel = CommentListModel.fromJson(response);
       return commentListModel;

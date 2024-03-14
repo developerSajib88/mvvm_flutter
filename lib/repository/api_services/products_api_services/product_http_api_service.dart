@@ -1,3 +1,4 @@
+import 'package:mvvm_flutter/configs/api_url/api_urls.dart';
 import 'package:mvvm_flutter/data/network/base_http_methods.dart';
 import 'package:mvvm_flutter/data/network/network_http_methods.dart';
 import 'package:mvvm_flutter/model/products/product_list_model.dart';
@@ -13,7 +14,7 @@ class ProductHttpApiService implements ProductRepository{
   /// This is product API service method
   @override
   Future<ProductListModel?> productList() async {
-    Map<String,dynamic>? response = await _apiMethods.get("url");
+    Map<String,dynamic>? response = await _apiMethods.get(ApiUrls.product);
     if(response != null){
       ProductListModel productListModel = ProductListModel.fromJson(response);
       return productListModel;
