@@ -29,30 +29,24 @@ class ProductItemView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      height: 150,
-      padding: const EdgeInsets.all(8),
-      child: Row(
-        children: [
-          Column(
-            children: [
-              Image.network(thumbnail, width: 100, height: 100,),
-              Text(price.toString())
-            ],
-          ),
-          
-          const SizedBox(width: 10),
-          
-          Column(
-            children: [
-              
-              
-              
-            ],
-          )
-          
-        ],
+    return Card(
+      child: Container(
+        padding: const EdgeInsets.all(8),
+        child:    Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Image.network(thumbnail, width: 103, height: 100,fit: BoxFit.cover,),
+            const SizedBox(height: 10,),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(title),
+                Text("Price : $price Tk"),
+              ],
+            ),
+          ],
+        ),
+
       ),
     );
   }

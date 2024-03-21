@@ -43,8 +43,12 @@ class _ProductViewState extends State<ProductView> {
                       if (value.productList.data!.products!.isEmpty) {
                         return const Center(child: Text('No data found'));
                       } else {
-                        return ListView.builder(
+                        return GridView.builder(
                           itemCount: value.productList.data?.products?.length,
+                            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                                crossAxisCount: 3,
+                                childAspectRatio: 0.65
+                            ),
                             itemBuilder: (context, index) {
                               return ProductItemView(
                                   id: value.productList.data?.products?[index].id ?? 0,
